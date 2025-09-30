@@ -1,4 +1,4 @@
-const int clockPin = 2; // pick any digital pin
+const int clockPin = 2; 
 const int piezoPin = 8;
 const int piezoPinIn = A0;
 int clockState = HIGH;
@@ -20,7 +20,7 @@ void setup() {
   pinMode(outputPin, OUTPUT);
   pinMode(piezoPin, OUTPUT);
 
-  Serial.begin(9600); // initialize serial monitor
+  Serial.begin(9600); 
 }
 
 void loop() {
@@ -33,7 +33,7 @@ void loop() {
   digitalWrite(trigPin, LOW);
 
   // Medir el tiempo de respuesta
-  duration = pulseIn(echoPin, HIGH, 30000); // timeout 30 ms
+  duration = pulseIn(echoPin, HIGH, 30000); 
 
   if (duration == 0) {
     distance = 999; // fuera de rango
@@ -41,7 +41,7 @@ void loop() {
     distance = duration * 0.034 / 2; // convertir a cm
   }
 
-  // Salida digital: HIGH si dentro de rango, LOW si fuera
+  // Salida digital: HIGH dentro de rango, LOW fuera
   if (distance >= threshold) {
     digitalWrite(outputPin, HIGH);
   } else {
